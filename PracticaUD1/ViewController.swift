@@ -9,36 +9,56 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var botonAzul: UIButton!
-    @IBOutlet weak var botonRojo: UIButton!
-    @IBOutlet weak var botonVerde: UIButton!
-    @IBOutlet weak var sliderTamañoEtiqueta: UISlider!
-    @IBOutlet weak var textFieldTextoUsuario: UITextField!
+        @IBOutlet weak var label: UILabel!
+        @IBOutlet weak var boton1: UIButton!
+        @IBOutlet weak var boton2: UIButton!
+        @IBOutlet weak var boton3: UIButton!
+        @IBOutlet weak var sliderTamañoEtiqueta: UISlider!
+        @IBOutlet weak var textFieldTextoUsuario: UITextField!
+        let coloresTexto: [String: UIColor] = [
+            "Rojo": .red,
+            "Verde": .green,
+            "Azul": .blue,
+            "Amarillo": .yellow,
+            "Naranja": .orange,
+            "Púrpura": .purple,
+            "Marrón": .brown,
+            "Negro": .black,
+            "Gris": .gray,
+            "Magenta": .magenta
+        ]
+        var nombresDeColores = ["Rojo", "Verde", "Azul", "Amarillo", "Naranja", "Púrpura", "Marrón", "Negro", "Gris", "Magenta"]
     
-    func randomNumber() -> Float {
-           return Float.random(in: 0.0...1.0)
+            
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            nombresDeColores.shuffle()
+            pintaColoresBotones()
+            poneTextoABotones()
+        }
+    
+        func pintaColoresBotones() {
+            boton1.backgroundColor = coloresTexto[nombresDeColores[0]]
+            boton2.backgroundColor = coloresTexto[nombresDeColores[1]]
+            boton3.backgroundColor = coloresTexto[nombresDeColores[2]]
+        }
+    
+        func poneTextoABotones() {
+            boton1.setTitle(nombresDeColores[0], for: .normal)
+            boton2.setTitle(nombresDeColores[1], for: .normal)
+            boton3.setTitle(nombresDeColores[2], for: .normal)
+        }
+       
+       @IBAction func cambiaAColor1(_ sender: UIButton) {
+           label.textColor = boton1.backgroundColor
        }
        
-       override func viewDidLoad() {
-           super.viewDidLoad()
-           // Do any additional setup after loading the view.
-           botonAzul.backgroundColor = UIColor(red: CGFloat(randomNumber()), green: CGFloat(randomNumber()), blue: CGFloat(randomNumber()), alpha: CGFloat(randomNumber()))
-           botonRojo.backgroundColor = UIColor(red: CGFloat(randomNumber()), green: CGFloat(randomNumber()), blue: CGFloat(randomNumber()), alpha: CGFloat(randomNumber()))
-           botonVerde.backgroundColor = UIColor(red: CGFloat(randomNumber()), green: CGFloat(randomNumber()), blue: CGFloat(randomNumber()), alpha: CGFloat(randomNumber()))
-           
+       @IBAction func cambiaAColor2(_ sender: UIButton) {
+           label.textColor = boton2.backgroundColor
        }
        
-       @IBAction func botonColorAzul(_ sender: UIButton) {
-           label.textColor = botonAzul.backgroundColor
-       }
-       
-       @IBAction func botonColorRojo(_ sender: UIButton) {
-           label.textColor = botonRojo.backgroundColor
-       }
-       
-       @IBAction func botonColorVerde(_ sender: UIButton) {
-           label.textColor = botonVerde.backgroundColor
+       @IBAction func cambiaAColor3(_ sender: UIButton) {
+           label.textColor = boton3.backgroundColor
        }
        
        @IBAction func cambiaTamañoFuente(_ sender: UISlider) {

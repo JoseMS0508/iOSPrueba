@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,6 +43,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90v-EB-ImC" userLabel="botonAzul">
                                 <rect key="frame" x="52" y="420" width="90" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Azul">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
@@ -54,12 +57,14 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="botonColorAzul:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Q3-oP-9ya"/>
+                                    <action selector="cambiaAColor1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Q3-oP-9ya"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06Q-Ks-Kav">
                                 <rect key="frame" x="155" y="420" width="88" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Color 2"/>
                                 <userDefinedRuntimeAttributes>
@@ -69,12 +74,14 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="botonColorRojo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6up-zY-tek"/>
+                                    <action selector="cambiaAColor2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6up-zY-tek"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyt-WK-dD0">
                                 <rect key="frame" x="261" y="420" width="80" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Color 3"/>
                                 <userDefinedRuntimeAttributes>
@@ -84,7 +91,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="botonColorVerde:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AlP-pe-tkM"/>
+                                    <action selector="cambiaAColor3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AlP-pe-tkM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -93,9 +100,9 @@
                         <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
                     </view>
                     <connections>
-                        <outlet property="botonAzul" destination="90v-EB-ImC" id="NMJ-0F-t02"/>
-                        <outlet property="botonRojo" destination="06Q-Ks-Kav" id="HaL-BK-FzD"/>
-                        <outlet property="botonVerde" destination="uyt-WK-dD0" id="bCX-Ah-TzD"/>
+                        <outlet property="boton1" destination="90v-EB-ImC" id="NMJ-0F-t02"/>
+                        <outlet property="boton2" destination="06Q-Ks-Kav" id="HaL-BK-FzD"/>
+                        <outlet property="boton3" destination="uyt-WK-dD0" id="bCX-Ah-TzD"/>
                         <outlet property="label" destination="zZf-AB-atC" id="gzd-jl-BnD"/>
                         <outlet property="sliderTamañoEtiqueta" destination="rN5-fv-VKS" id="o1v-eq-AMm"/>
                         <outlet property="textFieldTextoUsuario" destination="1q3-5W-Sdr" id="lBR-AC-yhp"/>
@@ -107,6 +114,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
